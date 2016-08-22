@@ -8,7 +8,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Game;
+use App\Models\Game;
 
 class Games
 {
