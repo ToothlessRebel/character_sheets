@@ -20,8 +20,6 @@ class HeaderTokenGuard implements Guard
 
     /** @var Request $request */
     private $request;
-    /** @var UserProvider $provider */
-    private $provider;
     private $storage_key;
 
     /**
