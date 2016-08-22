@@ -11,4 +11,16 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', 'Intro@index');
+
+Route::group(
+    [
+        'namespace'  => 'Api',
+        'middleware' => 'tokenAuth',
+    ],
+    function () {
+        Route::get('/api/games/', 'Games@index');
+    }
+);
