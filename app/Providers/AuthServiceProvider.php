@@ -29,7 +29,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies($gate);
 
         Auth::extend('headerToken', function ($app, $name, array $config) {
-            return App::make('HeaderTokenGuard', [Auth::createUserProvider($config['provider'])]);
+            return App::make('App\Guards\HeaderTokenGuard', [Auth::createUserProvider($config['provider'])]);
         });
     }
 }
