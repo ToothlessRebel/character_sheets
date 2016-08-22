@@ -18,9 +18,11 @@ Route::get('/', 'Intro@index');
 Route::group(
     [
         'namespace'  => 'Api',
-        'middleware' => 'TokenAuth',
+        'middleware' => 'auth:api',
     ],
     function () {
         Route::get('/api/games/', 'Games@index');
     }
 );
+
+Route::auth();
