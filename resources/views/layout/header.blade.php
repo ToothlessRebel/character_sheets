@@ -1,4 +1,4 @@
-<div class="right aligned column">
+<div class="right aligned login action column">
     @if (!$user)
         <i class="sign in icon "></i> Log In
     @endif
