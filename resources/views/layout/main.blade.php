@@ -18,4 +18,7 @@
     </div>
 </div>
 </body>
+@section('scripts')
+
+@show
 </html>
