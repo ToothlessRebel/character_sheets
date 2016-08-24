@@ -13,7 +13,17 @@ var elixir = require('laravel-elixir');
 
 elixir(function (mix) {
     mix.scripts([
-        'header.js'
+        'header.js',
+        'login_modal.js'
     ]);
-    mix.version(['js/all.js']);
+
+    mix.styles([
+        'header.css'
+    ]);
+
+    mix.styles([
+        'register.css'
+    ], 'public/css/register.css');
+
+    mix.version(['js/all.js', 'css/register.css', 'css/all.css']);
 });

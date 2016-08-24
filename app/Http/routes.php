@@ -14,6 +14,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Intro@index');
+Route::get('/getHeader', 'Intro@header');
 
 Route::group(
     [

@@ -13,8 +13,11 @@ class Intro extends Controller
 {
     public function index()
     {
-        return view('home', [
-            'user' => false,
-        ]);
+        return view('home');
+    }
+
+    public function header()
+    {
+        return view('layout.header');
     }
 }

@@ -3,9 +3,12 @@
  */
 
 $(function () {
-    $('.modal').modal();
+    $('.ui.modal').modal();
+    $('.ui.dropdown').dropdown();
 
-    $('.login.action').on('click', function () {
+    var $header = $('.app.header.row');
+
+    $header.on('click', '.login.action', function () {
         $('.login.modal').modal('show');
-    })
+    });
 });
