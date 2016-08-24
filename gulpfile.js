@@ -11,5 +11,8 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
+elixir(function (mix) {
+    mix.scripts([
+        'header.js'
+    ]);
 });
