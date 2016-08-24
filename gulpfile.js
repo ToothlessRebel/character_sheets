@@ -15,4 +15,5 @@ elixir(function (mix) {
     mix.scripts([
         'header.js'
     ]);
+    mix.version(['js/all.js']);
 });
