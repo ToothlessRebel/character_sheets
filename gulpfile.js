@@ -25,5 +25,14 @@ elixir(function (mix) {
         'register.css'
     ], 'public/css/register.css');
 
-    mix.version(['js/all.js', 'css/register.css', 'css/all.css']);
+    mix.styles([
+        'password.css'
+    ], 'public/css/password.css');
+
+    mix.version([
+        'js/all.js',
+        'css/register.css',
+        'css/all.css',
+        'css/password.css'
+    ]);
 });
