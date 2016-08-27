@@ -58,4 +58,14 @@ class User extends Authenticatable
     {
         return App::make('App\Gravatar', [$this->email])->link($size);
     }
+
+    /**
+     * Creates the slug for this User.
+     *
+     * @return string
+     */
+    public function slug()
+    {
+        return  str_slug(($this->display_name ?: $this->name), '');
+    }
 }

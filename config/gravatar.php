@@ -8,9 +8,9 @@
 
 return [
     'sizes' => [
-        'small'  => 40,
-        'medium' => 160,
-        'large'  => 640,
+        'small'  => 20,
+        'medium' => 80,
+        'large'  => 320,
     ],
 
     'urls' => [

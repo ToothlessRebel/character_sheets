@@ -9,7 +9,9 @@
 namespace App\Providers;
 
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\View;
 
 class ComposerServiceProvider extends ServiceProvider
 {
@@ -18,7 +20,9 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('layout.header', 'App\Http\ViewComposers\HeaderComposer');
+        view()->composer('*', function (View $view) {
+            $view->with('current_user', Auth::user());
+        });
     }
 
     /**

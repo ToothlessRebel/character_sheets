@@ -1,22 +1,19 @@
-<!--suppress ALL -->
 <div class="two wide column">
     CharSheets
 </div>
-@if (!$user)
+@if (!$current_user)
     <div class="right floated right aligned login action four wide column">
         <div><i class="sign in icon "></i> Log In</div>
     </div>
 @else
     <div class="right floated right aligned profile action four wide column">
-        <div class="ui dropdown">
-            <img class="gravatar" alt="{{ $user->name }}'s Avatar" src="{{ $user->gravatar('small') }}">
+        <div class="ui floating dropdown">
+            <img class="gravatar" alt="{{ $current_user->name }}'s Avatar" src="{{ $current_user->gravatar('small') }}">
             <div class="text">
-                {{ $user->name }} <i class="dropdown icon"></i>
+                {{ $current_user->name }} <i class="dropdown icon"></i>
             </div>
-            <div class="ui vertical menu">
-                <a class="log out item" href="/logout">
-                    <i class="sign out icon"></i> Log Out
-                </a>
+            <div class="menu">
+                @include('user.card', ['user' => $current_user])
             </div>
         </div>
     </div>
