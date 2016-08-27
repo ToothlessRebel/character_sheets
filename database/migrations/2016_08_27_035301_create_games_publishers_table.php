@@ -4,7 +4,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 
-class AddApiTokenToUsers extends Migration
+class CreateGamesPublishersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddApiTokenToUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('api_token');
+        Schema::create('games_publishers', function (Blueprint $table) {
+            $table->integer('game_id');
+            $table->integer('publisher_id');
+            $table->boolean('is_active');
+
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddApiTokenToUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('api_token');
-        });
+        Schema::drop('games_publishers');
     }
 }
