@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         User::creating(function (User $user) {
-            $user->api_token = str_random(60);
+            $user->api_token = md5($user->email . str_random(30));
         });
     }
 
