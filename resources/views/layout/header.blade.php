@@ -3,12 +3,13 @@
     CharSheets
 </div>
 @if (!$user)
-    <div class="right floated right aligned login action two wide column">
+    <div class="right floated right aligned login action four wide column">
         <div><i class="sign in icon "></i> Log In</div>
     </div>
 @else
-    <div class="right floated right aligned profile action two wide column">
+    <div class="right floated right aligned profile action four wide column">
         <div class="ui dropdown">
+            <img class="gravatar" alt="{{ $user->name }}'s Avatar" src="{{ $user->gravatar('small') }}">
             <div class="text">
                 {{ $user->name }} <i class="dropdown icon"></i>
             </div>
