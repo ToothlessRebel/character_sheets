@@ -14,7 +14,8 @@ var elixir = require('laravel-elixir');
 elixir(function (mix) {
     mix.scripts([
         'header.js',
-        'login_modal.js'
+        'login_modal.js',
+        'main.js'
     ]);
 
     mix.styles([

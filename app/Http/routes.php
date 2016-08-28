@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'Intro@index');
 Route::get('/getHeader', 'Intro@header');
 
+Route::get('/user/{username}', 'User@show');
+
 Route::group(
     [
         'namespace'  => 'Api',

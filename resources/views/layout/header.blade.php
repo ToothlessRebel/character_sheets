@@ -8,7 +8,7 @@
 @else
     <div class="right floated right aligned profile action four wide column">
         <div class="ui floating dropdown">
-            <img class="gravatar" alt="{{ $current_user->name }}'s Avatar" src="{{ $current_user->gravatar('small') }}">
+            <img class="gravatar ui middle aligned spaced image" alt="{{ $current_user->name }}'s Avatar" src="{{ $current_user->gravatar('small') }}">
             <div class="text">
                 {{ $current_user->username }} <i class="dropdown icon"></i>
             </div>

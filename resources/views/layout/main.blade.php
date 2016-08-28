@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
+    <script src="{{ elixir('js/all.js') }}"></script>
     @section('styles')
     @show
 </head>
