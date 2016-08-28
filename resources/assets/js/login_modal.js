@@ -5,7 +5,7 @@
 $(function () {
     var $modal = $('.login.modal');
     var $content = $modal.find('.content');
-    var $sign_in_button = $content.find('button.sign.in');
+    var $header = $('.app.header.row');
     var $errors = $content.find('.error.message ul.errors');
     var $form = $errors.closest('.ui.form');
 
@@ -14,8 +14,12 @@ $(function () {
             url: '/getHeader',
             method: 'GET'
         }).done(function (response) {
-            $('.app.header.row').html(response);
+            $header.html(response);
             $modal.modal('hide');
+
+            // Initialize the newly added Semantic elements.
+            $('.ui.modal').modal();
+            $('.ui.dropdown').dropdown();
         });
     };
 
@@ -28,10 +32,11 @@ $(function () {
         $errors.empty();
     };
 
-    $sign_in_button.on('click', function (event) {
+    $modal.on('click', 'button.sign.in', function (event) {
         event.stopPropagation();
         event.preventDefault();
         clearFormErrors();
+        var $sign_in_button = $(event.currentTarget);
 
         $sign_in_button.addClass('loading');
 
