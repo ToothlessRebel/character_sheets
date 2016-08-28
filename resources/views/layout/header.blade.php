@@ -10,7 +10,7 @@
         <div class="ui floating dropdown">
             <img class="gravatar" alt="{{ $current_user->name }}'s Avatar" src="{{ $current_user->gravatar('small') }}">
             <div class="text">
-                {{ $current_user->name }} <i class="dropdown icon"></i>
+                {{ $current_user->username }} <i class="dropdown icon"></i>
             </div>
             <div class="menu">
                 @include('user.card', ['user' => $current_user])
@@ -27,8 +27,8 @@
             {{ csrf_field() }}
             {{-- <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"> --}}
             <div class="required field">
-                <label for="email">E-Mail Address</label>
-                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                <label for="username">Username</label>
+                <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}">
                 {{-- @if ($errors->has('email'))
                     <span class="help-block">
                                     <strong>{{ $errors->first('email') }}</strong>

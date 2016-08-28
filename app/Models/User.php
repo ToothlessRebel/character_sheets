@@ -22,6 +22,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
     ];
@@ -57,15 +58,5 @@ class User extends Authenticatable
     public function gravatar($size = 'medium')
     {
         return App::make('App\Gravatar', [$this->email])->link($size);
-    }
-
-    /**
-     * Creates the slug for this User.
-     *
-     * @return string
-     */
-    public function slug()
-    {
-        return  str_slug(($this->display_name ?: $this->name), '');
     }
 }

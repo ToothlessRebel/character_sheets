@@ -58,7 +58,7 @@ $(function () {
             } else {
                 // {"authenticated":false,"remember":"on","username":"toothlessrebel@gmail.com","errors":{"email":"These credentials do not match our records."}}
                 setFormErrored();
-                $errors.append($('<li></li>').text(response.errors.email));
+                $errors.append($('<li></li>').text(response.errors.username));
             }
         }).fail(function (response) {
             // {"email":["The email field is required."],"password":["The password field is required."]}

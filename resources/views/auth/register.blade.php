@@ -8,12 +8,12 @@
     <div class="right aligned ten wide column">
         <form class="ui huge equal width form" method="POST" action="{{ url('/register') }}">
             {{ csrf_field() }}
-            <div class="inline field{{ $errors->has('name') ? ' has-error' : '' }}">
-                <label for="name">Name</label>
-                <input id="name" type="text" name="name" value="{{ old('name') }}">
-                @if ($errors->has('name'))
+            <div class="inline field{{ $errors->has('username') ? ' has-error' : '' }}">
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username" value="{{ old('name') }}">
+                @if ($errors->has('username'))
                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('username') }}</strong>
                                     </span>
                 @endif
             </div>
