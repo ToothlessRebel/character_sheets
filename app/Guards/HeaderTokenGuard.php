@@ -44,7 +44,7 @@ class HeaderTokenGuard implements Guard
     {
         if (is_null($this->user)) {
             $this->user = $this->provider->retrieveByCredentials(
-                [$this->storage_key => $this->request->header('api_key')]
+                [$this->storage_key => $this->request->header('api-key')]
             );
         }
 
@@ -62,7 +62,7 @@ class HeaderTokenGuard implements Guard
     {
         $valid = false;
 
-        $credentials = [$this->storage_key => $credentials[$this->storage_key] ?: $this->request->header('api_key')];
+        $credentials = [$this->storage_key => $credentials[$this->storage_key] ?: $this->request->header('api-key')];
 
         if ($this->provider->retrieveByCredentials($credentials)) {
             $valid = true;
