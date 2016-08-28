@@ -14,10 +14,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 trait Contributable
 {
-    protected $touches = [
-        'contribution',
-    ];
-
     /**
      * Relates the Contributable to its Contribution.
      *

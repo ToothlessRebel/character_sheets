@@ -25,12 +25,22 @@ interface Contributable
     public function contribution();
 
     /**
+     * @param      $related
+     * @param      $name
+     * @param null $type
+     * @param null $id
+     * @param null $localKey
+     *
      * @return MorphMany
      */
-    public function morphMany();
+    public function morphMany($related, $name, $type = null, $id = null, $localKey = null);
 
     /**
+     * @param null $name
+     * @param null $type
+     * @param null $id
+     *
      * @return MorphTo
      */
-    public function morphTo();
+    public function morphTo($name = null, $type = null, $id = null);
 }

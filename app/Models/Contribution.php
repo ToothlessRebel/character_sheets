@@ -24,6 +24,9 @@ class Contribution extends Model
 
     protected $fillable = [
         'is_accepted',
+        'contributable_type',
+        'contributable_id',
+        'user_id',
     ];
 
     protected $touches = [

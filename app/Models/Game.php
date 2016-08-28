@@ -2,17 +2,20 @@
 
 namespace App\Models;
 
+use App\Contracts\Interfaces\Contributed;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Game extends Model
+class Game extends Model implements Contributed
 {
     use SoftDeletes;
 
+    public $timestamps = true;
+
     protected $table = 'games';
 
-    public $timestamps = true;
+    protected $type = 'game';
 
     protected $fillable = [
         'name',
@@ -48,5 +51,25 @@ class Game extends Model
         return $this->belongsToMany('App\Models\Sources')
             ->withTimestamps()
             ->withPivot('updated_at');
+    }
+
+    /**
+     * Returns the ID of the contributed item.
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Returns the properly mapped type of the contributed item.
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

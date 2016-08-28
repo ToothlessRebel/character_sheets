@@ -25,6 +25,7 @@ Route::group(
     ],
     function () {
         Route::get('/api/games/', 'Games@index');
+        Route::put('/api/games/', 'Games@store');
     }
 );
 

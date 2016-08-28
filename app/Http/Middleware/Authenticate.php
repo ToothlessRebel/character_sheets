@@ -22,7 +22,7 @@ class Authenticate
                 return response('Unauthorized.', 401);
             }
 
-            return redirect()->guest('/?login=1');
+            return redirect()->guest('/?login=true'); // TODO I think we need a new middle that doesn't redirect for API requests.
         }
 
         return $next($request);

@@ -18,8 +18,9 @@ class RelationProvider extends ServiceProvider
     {
         Relation::morphMap([
             'edit'     => 'App\Models\Edit',
-            'addition' => 'App\Model\Addition',
-            'bonus'    => 'App\Model\Bonus',
+            'addition' => 'App\Models\Addition',
+            'bonus'    => 'App\Models\Bonus',
+            'game'     => 'App\Models\Game',
         ]);
     }
 

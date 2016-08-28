@@ -20,9 +20,12 @@ class Addition extends Model implements ContributableInterface
 
     public $timestamps = true;
 
-    protected $fillable = [];
+    protected $fillable = [
+        'target_type',
+        'target_id',
+    ];
 
-    protected $hidden =[
+    protected $hidden = [
         'id',
     ];
 }
