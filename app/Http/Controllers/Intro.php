@@ -9,11 +9,15 @@
 namespace App\Http\Controllers;
 
 
+use Illuminate\Http\Request;
+
 class Intro extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        $login = $request->input('login', 'false');
+
+        return view('home', ['show_login' => $login]);
     }
 
     public function header()

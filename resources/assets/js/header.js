@@ -11,4 +11,8 @@ $(function () {
     $header.on('click', '.login.action', function () {
         $('.login.modal').modal('show');
     });
+
+    if ($('span.show.login').data('show') === true) {
+        $header.find('.login.action').trigger('click');
+    }
 });
